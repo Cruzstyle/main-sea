@@ -1,4 +1,4 @@
-.tippy-box[data-animation=fade][data-state=hidden] {
+.tippy-box[data-animation=fade][] {
     opacity: 0
 }
 

